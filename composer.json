@@ -1,0 +1,34 @@
+{
+  "name": "anktx/monolog-influxdb",
+  "description": "InfluxDB Handler for Monolog, which allows to send metrics to InfluxDB",
+  "type": "project",
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "require": {
+    "php": ">=8.1",
+    "monolog/monolog": "^3.5"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^v3.38",
+    "phpstan/phpstan": "^1.10",
+    "phpunit/phpunit": "^10.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Drew\\MonologInfluxDB\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "tests\\": "tests/"
+    }
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  },
+  "scripts": {
+    "analyse": "phpstan analyse --memory-limit 300M -v -l 6 -c phpstan.neon ./src ./tests",
+    "cs-fix": "php-cs-fixer fix --diff --verbose $1"
+  }
+}
